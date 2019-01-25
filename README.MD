@@ -11,6 +11,8 @@
 the download file will be on `download` dir.
 
 > Note
+
+- list is by copying on address bar
 - in any case of list.txt, use `#` character on first line, example :
 
 ```txt
