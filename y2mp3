@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+source ./y2mp3-lib.sh
+
+if [[ -z $1 ]]; then
+  list_link=$(cat sample-list.txt)
+else
+  list_link=$(cat $1)
+fi
+
+for i in $list_link
+do
+  if [[ $i == *"#"* ]]; then
+    echo $i
+  else
+    download $i
+  fi
+done
+
+list_index_temp=$(ls download | grep index)
+if ! [[ -z $list_index_temp ]]; then
+  for j in $list_index_temp; do
+    echo "removing file $j" && rm -rf download/$j
+  done
+else
+  echo "index is clean"
+fi
