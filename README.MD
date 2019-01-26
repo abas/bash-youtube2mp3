@@ -5,7 +5,11 @@
 ```bash
   $ ./y2mp3
   # default is use sample-list.txt, you can edit or
-  $ ./y2mp3 [target-list]
+  
+  $ ./y2mp3 target-file.txt
+
+  # you also can paste on parameter optional like bellow
+  $ ./y3mp3 link1 link2 link3 ... etc
 ```
 
 the download file will be on `download` dir.
