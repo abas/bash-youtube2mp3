@@ -26,4 +26,12 @@ the download file will be on `download` dir.
   etc
 ```
 
+> Next Objective
+
+- [ ] make dynamic target folder download
+
+> Issue
+
+- [ ] somelink can't download, and just trow an html file.
+
 <Kankuu> dont be hesitate to make `Issue` or `Pull Request` :>
