@@ -15,12 +15,19 @@ function download () {
     if [[ $(is-link-correct $1) == "true" ]]; then
       y2mp3_api="www.convertmp3.io/fetch/?video="
       # get file
-      echo "|- downloading..."
+      echo -n "|- downloading... $1 -- "
       linked_download=$y2mp3_api$1
-      wget --directory-prefix=$(pwd)/download \
+      downloader=$(
+            wget --directory-prefix=$(pwd)/download \
             --content-disposition \
             -E -c $linked_download \
-            && echo "downloading $1 success..."
+            > /dev/null 2>&1 ;echo $?
+            )
+      if [[ $downloader -gt 0 ]]; then
+        echo "failed, status : $downloader"
+      else
+        echo "success, status : $downloader"
+      fi
     else
       # exception
       echo "|- error $?"
