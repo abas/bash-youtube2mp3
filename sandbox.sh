@@ -8,4 +8,7 @@ else
   echo "incorrect link"
 fi
 
-download "https://www.youtube.com/watch?v=343Q1V7vJS4&start_radio=1&list=RD343Q1V7vJS4"
+download "https://www.youtube.com/watch?v=clU8c2fpk2s"
+
+echo -n "hai "
+echo "anone"
