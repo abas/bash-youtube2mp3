@@ -5,7 +5,11 @@ source ./y2mp3-lib.sh
 if [[ -z $1 ]]; then
   list_link=$(cat sample-list.txt)
 else
-  list_link=$(cat $1)
+  if [[ $1 == *"youtube.com"* ]]; then
+    list_link=$@
+  else
+    list_link=$(cat $1)
+  fi
 fi
 
 for i in $list_link
